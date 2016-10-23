@@ -1,5 +1,6 @@
 package ru.mail.park.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 public class GreetingController {
 
+  @Autowired
   private final GreetingService service;
 
   public GreetingController(GreetingService service) {
@@ -25,12 +27,6 @@ public class GreetingController {
   @RequestMapping("/greet")
   public void greet(@RequestParam String name, @RequestParam String greeting) {
     service.create(new Greeting(name, greeting));
-  }
-
-  @RequestMapping("/mytest")
-    public String mytest(@RequestParam String name) {
-
-      return "asda";
   }
 
 }

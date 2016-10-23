@@ -16,5 +16,5 @@ public class Greeting {
   public String getGreeting() {
     return greeting;
   }
-
 }
+
